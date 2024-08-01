@@ -1,0 +1,1464 @@
+
+Lab 3 Digital 2 MAESTRO.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000a2e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000009ba  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000005  00800100  00800100  00000a2e  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000a2e  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000a60  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000a0  00000000  00000000  00000aa0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001170  00000000  00000000  00000b40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000908  00000000  00000000  00001cb0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000a49  00000000  00000000  000025b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000019c  00000000  00000000  00003004  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000065c  00000000  00000000  000031a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001947  00000000  00000000  000037fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000070  00000000  00000000  00005143  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3b 00 	jmp	0x76	; 0x76 <__ctors_end>
+   4:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+   8:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+   c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  10:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  14:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  18:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  1c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  20:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  24:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  28:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  2c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  30:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  34:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  38:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  3c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  40:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  44:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  48:	0c 94 0e 04 	jmp	0x81c	; 0x81c <__vector_18>
+  4c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  50:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  54:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  58:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  5c:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  60:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  64:	0c 94 58 00 	jmp	0xb0	; 0xb0 <__bad_interrupt>
+  68:	50 04       	cpc	r5, r0
+  6a:	57 04       	cpc	r5, r7
+  6c:	5e 04       	cpc	r5, r14
+  6e:	68 04       	cpc	r6, r8
+  70:	72 04       	cpc	r7, r2
+  72:	7c 04       	cpc	r7, r12
+  74:	86 04       	cpc	r8, r6
+
+00000076 <__ctors_end>:
+  76:	11 24       	eor	r1, r1
+  78:	1f be       	out	0x3f, r1	; 63
+  7a:	cf ef       	ldi	r28, 0xFF	; 255
+  7c:	d8 e0       	ldi	r29, 0x08	; 8
+  7e:	de bf       	out	0x3e, r29	; 62
+  80:	cd bf       	out	0x3d, r28	; 61
+
+00000082 <__do_copy_data>:
+  82:	11 e0       	ldi	r17, 0x01	; 1
+  84:	a0 e0       	ldi	r26, 0x00	; 0
+  86:	b1 e0       	ldi	r27, 0x01	; 1
+  88:	ea eb       	ldi	r30, 0xBA	; 186
+  8a:	f9 e0       	ldi	r31, 0x09	; 9
+  8c:	02 c0       	rjmp	.+4      	; 0x92 <__do_copy_data+0x10>
+  8e:	05 90       	lpm	r0, Z+
+  90:	0d 92       	st	X+, r0
+  92:	a0 30       	cpi	r26, 0x00	; 0
+  94:	b1 07       	cpc	r27, r17
+  96:	d9 f7       	brne	.-10     	; 0x8e <__do_copy_data+0xc>
+
+00000098 <__do_clear_bss>:
+  98:	21 e0       	ldi	r18, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	01 c0       	rjmp	.+2      	; 0xa2 <.do_clear_bss_start>
+
+000000a0 <.do_clear_bss_loop>:
+  a0:	1d 92       	st	X+, r1
+
+000000a2 <.do_clear_bss_start>:
+  a2:	a5 30       	cpi	r26, 0x05	; 5
+  a4:	b2 07       	cpc	r27, r18
+  a6:	e1 f7       	brne	.-8      	; 0xa0 <.do_clear_bss_loop>
+  a8:	0e 94 5a 00 	call	0xb4	; 0xb4 <main>
+  ac:	0c 94 db 04 	jmp	0x9b6	; 0x9b6 <_exit>
+
+000000b0 <__bad_interrupt>:
+  b0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b4 <main>:
+// 	writeUART(1);
+// }
+
+float map0(float duty, float Imin, float Imax, float Omin, float Omax){
+	return ((duty - Imin)*(Omax - Omin)/(Imax - Imin)) + Omin;
+}
+  b4:	8a b1       	in	r24, 0x0a	; 10
+  b6:	8c 6f       	ori	r24, 0xFC	; 252
+  b8:	8a b9       	out	0x0a, r24	; 10
+  ba:	8b b1       	in	r24, 0x0b	; 11
+  bc:	83 70       	andi	r24, 0x03	; 3
+  be:	8b b9       	out	0x0b, r24	; 11
+  c0:	84 b1       	in	r24, 0x04	; 4
+  c2:	83 60       	ori	r24, 0x03	; 3
+  c4:	84 b9       	out	0x04, r24	; 4
+  c6:	85 b1       	in	r24, 0x05	; 5
+  c8:	8c 7f       	andi	r24, 0xFC	; 252
+  ca:	85 b9       	out	0x05, r24	; 5
+  cc:	20 e0       	ldi	r18, 0x00	; 0
+  ce:	40 e0       	ldi	r20, 0x00	; 0
+  d0:	60 e0       	ldi	r22, 0x00	; 0
+  d2:	83 e5       	ldi	r24, 0x53	; 83
+  d4:	0e 94 38 04 	call	0x870	; 0x870 <InitSPI>
+  d8:	0e 94 a4 04 	call	0x948	; 0x948 <initUART9600>
+  dc:	78 94       	sei
+  de:	85 b1       	in	r24, 0x05	; 5
+  e0:	8b 7f       	andi	r24, 0xFB	; 251
+  e2:	85 b9       	out	0x05, r24	; 5
+  e4:	2f ef       	ldi	r18, 0xFF	; 255
+  e6:	84 e3       	ldi	r24, 0x34	; 52
+  e8:	9c e0       	ldi	r25, 0x0C	; 12
+  ea:	21 50       	subi	r18, 0x01	; 1
+  ec:	80 40       	sbci	r24, 0x00	; 0
+  ee:	90 40       	sbci	r25, 0x00	; 0
+  f0:	e1 f7       	brne	.-8      	; 0xea <main+0x36>
+  f2:	00 c0       	rjmp	.+0      	; 0xf4 <main+0x40>
+  f4:	00 00       	nop
+  f6:	f3 cf       	rjmp	.-26     	; 0xde <main+0x2a>
+
+000000f8 <comprobarque>:
+
+void comprobarque(char opcion){
+  f8:	ef 92       	push	r14
+  fa:	ff 92       	push	r15
+  fc:	0f 93       	push	r16
+  fe:	1f 93       	push	r17
+ 100:	cf 93       	push	r28
+		//PRIMERA PARTE
+		
+			if (caracter==0){
+ 102:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 106:	91 11       	cpse	r25, r1
+ 108:	17 c0       	rjmp	.+46     	; 0x138 <comprobarque+0x40>
+				if (opcion == 114){			//OPCION ES 'r'
+ 10a:	82 37       	cpi	r24, 0x72	; 114
+ 10c:	49 f4       	brne	.+18     	; 0x120 <comprobarque+0x28>
+					PORTD &= ~(1<<PORTD2);
+ 10e:	9b b1       	in	r25, 0x0b	; 11
+ 110:	9b 7f       	andi	r25, 0xFB	; 251
+ 112:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 114:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 118:	9f 5f       	subi	r25, 0xFF	; 255
+ 11a:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 11e:	c3 c0       	rjmp	.+390    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){		//OPCION ES 's'
+ 120:	83 37       	cpi	r24, 0x73	; 115
+ 122:	09 f0       	breq	.+2      	; 0x126 <comprobarque+0x2e>
+ 124:	c0 c0       	rjmp	.+384    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD2);
+ 126:	9b b1       	in	r25, 0x0b	; 11
+ 128:	94 60       	ori	r25, 0x04	; 4
+ 12a:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 12c:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 130:	9f 5f       	subi	r25, 0xFF	; 255
+ 132:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 136:	b7 c0       	rjmp	.+366    	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==1){
+ 138:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 13c:	91 30       	cpi	r25, 0x01	; 1
+ 13e:	b9 f4       	brne	.+46     	; 0x16e <comprobarque+0x76>
+				if (opcion == 114){			//OPCION ES 'r'
+ 140:	82 37       	cpi	r24, 0x72	; 114
+ 142:	49 f4       	brne	.+18     	; 0x156 <comprobarque+0x5e>
+					PORTD &= ~(1<<PORTD3);
+ 144:	9b b1       	in	r25, 0x0b	; 11
+ 146:	97 7f       	andi	r25, 0xF7	; 247
+ 148:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 14a:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 14e:	9f 5f       	subi	r25, 0xFF	; 255
+ 150:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 154:	a8 c0       	rjmp	.+336    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){	//OPCION ES 's'
+ 156:	83 37       	cpi	r24, 0x73	; 115
+ 158:	09 f0       	breq	.+2      	; 0x15c <comprobarque+0x64>
+ 15a:	a5 c0       	rjmp	.+330    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD3);
+ 15c:	9b b1       	in	r25, 0x0b	; 11
+ 15e:	98 60       	ori	r25, 0x08	; 8
+ 160:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 162:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 166:	9f 5f       	subi	r25, 0xFF	; 255
+ 168:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 16c:	9c c0       	rjmp	.+312    	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==2){
+ 16e:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 172:	92 30       	cpi	r25, 0x02	; 2
+ 174:	b9 f4       	brne	.+46     	; 0x1a4 <comprobarque+0xac>
+				if (opcion == 114){
+ 176:	82 37       	cpi	r24, 0x72	; 114
+ 178:	49 f4       	brne	.+18     	; 0x18c <comprobarque+0x94>
+					PORTD &= ~(1<<PORTD4);
+ 17a:	9b b1       	in	r25, 0x0b	; 11
+ 17c:	9f 7e       	andi	r25, 0xEF	; 239
+ 17e:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 180:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 184:	9f 5f       	subi	r25, 0xFF	; 255
+ 186:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 18a:	8d c0       	rjmp	.+282    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 18c:	83 37       	cpi	r24, 0x73	; 115
+ 18e:	09 f0       	breq	.+2      	; 0x192 <comprobarque+0x9a>
+ 190:	8a c0       	rjmp	.+276    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD4);
+ 192:	9b b1       	in	r25, 0x0b	; 11
+ 194:	90 61       	ori	r25, 0x10	; 16
+ 196:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 198:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 19c:	9f 5f       	subi	r25, 0xFF	; 255
+ 19e:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1a2:	81 c0       	rjmp	.+258    	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==3){
+ 1a4:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1a8:	93 30       	cpi	r25, 0x03	; 3
+ 1aa:	b9 f4       	brne	.+46     	; 0x1da <comprobarque+0xe2>
+				if (opcion == 114){
+ 1ac:	82 37       	cpi	r24, 0x72	; 114
+ 1ae:	49 f4       	brne	.+18     	; 0x1c2 <comprobarque+0xca>
+					PORTD &= ~(1<<PORTD5);
+ 1b0:	9b b1       	in	r25, 0x0b	; 11
+ 1b2:	9f 7d       	andi	r25, 0xDF	; 223
+ 1b4:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 1b6:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1ba:	9f 5f       	subi	r25, 0xFF	; 255
+ 1bc:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1c0:	72 c0       	rjmp	.+228    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 1c2:	83 37       	cpi	r24, 0x73	; 115
+ 1c4:	09 f0       	breq	.+2      	; 0x1c8 <comprobarque+0xd0>
+ 1c6:	6f c0       	rjmp	.+222    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD5);
+ 1c8:	9b b1       	in	r25, 0x0b	; 11
+ 1ca:	90 62       	ori	r25, 0x20	; 32
+ 1cc:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 1ce:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1d2:	9f 5f       	subi	r25, 0xFF	; 255
+ 1d4:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1d8:	66 c0       	rjmp	.+204    	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==4){
+ 1da:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1de:	94 30       	cpi	r25, 0x04	; 4
+ 1e0:	b9 f4       	brne	.+46     	; 0x210 <comprobarque+0x118>
+				if (opcion == 114){
+ 1e2:	82 37       	cpi	r24, 0x72	; 114
+ 1e4:	49 f4       	brne	.+18     	; 0x1f8 <comprobarque+0x100>
+					PORTD &= ~(1<<PORTD6);
+ 1e6:	9b b1       	in	r25, 0x0b	; 11
+ 1e8:	9f 7b       	andi	r25, 0xBF	; 191
+ 1ea:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 1ec:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1f0:	9f 5f       	subi	r25, 0xFF	; 255
+ 1f2:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 1f6:	57 c0       	rjmp	.+174    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 1f8:	83 37       	cpi	r24, 0x73	; 115
+ 1fa:	09 f0       	breq	.+2      	; 0x1fe <comprobarque+0x106>
+ 1fc:	54 c0       	rjmp	.+168    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD6);
+ 1fe:	9b b1       	in	r25, 0x0b	; 11
+ 200:	90 64       	ori	r25, 0x40	; 64
+ 202:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 204:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 208:	9f 5f       	subi	r25, 0xFF	; 255
+ 20a:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 20e:	4b c0       	rjmp	.+150    	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==5){
+ 210:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 214:	95 30       	cpi	r25, 0x05	; 5
+ 216:	b1 f4       	brne	.+44     	; 0x244 <comprobarque+0x14c>
+				if (opcion == 114){
+ 218:	82 37       	cpi	r24, 0x72	; 114
+ 21a:	49 f4       	brne	.+18     	; 0x22e <comprobarque+0x136>
+					PORTD &= ~(1<<PORTD7);
+ 21c:	9b b1       	in	r25, 0x0b	; 11
+ 21e:	9f 77       	andi	r25, 0x7F	; 127
+ 220:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 222:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 226:	9f 5f       	subi	r25, 0xFF	; 255
+ 228:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 22c:	3c c0       	rjmp	.+120    	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 22e:	83 37       	cpi	r24, 0x73	; 115
+ 230:	d1 f5       	brne	.+116    	; 0x2a6 <comprobarque+0x1ae>
+					PORTD |= (1<<PORTD7);
+ 232:	9b b1       	in	r25, 0x0b	; 11
+ 234:	90 68       	ori	r25, 0x80	; 128
+ 236:	9b b9       	out	0x0b, r25	; 11
+					caracter++;
+ 238:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 23c:	9f 5f       	subi	r25, 0xFF	; 255
+ 23e:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 242:	31 c0       	rjmp	.+98     	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==6){
+ 244:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 248:	96 30       	cpi	r25, 0x06	; 6
+ 24a:	b1 f4       	brne	.+44     	; 0x278 <comprobarque+0x180>
+				if (opcion ==114){
+ 24c:	82 37       	cpi	r24, 0x72	; 114
+ 24e:	49 f4       	brne	.+18     	; 0x262 <comprobarque+0x16a>
+					PORTB &= ~(1<<PORTB0);
+ 250:	95 b1       	in	r25, 0x05	; 5
+ 252:	9e 7f       	andi	r25, 0xFE	; 254
+ 254:	95 b9       	out	0x05, r25	; 5
+					caracter++;
+ 256:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 25a:	9f 5f       	subi	r25, 0xFF	; 255
+ 25c:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 260:	22 c0       	rjmp	.+68     	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 262:	83 37       	cpi	r24, 0x73	; 115
+ 264:	01 f5       	brne	.+64     	; 0x2a6 <comprobarque+0x1ae>
+					PORTB |= (1<<PORTB0);
+ 266:	95 b1       	in	r25, 0x05	; 5
+ 268:	91 60       	ori	r25, 0x01	; 1
+ 26a:	95 b9       	out	0x05, r25	; 5
+					caracter++;
+ 26c:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 270:	9f 5f       	subi	r25, 0xFF	; 255
+ 272:	90 93 00 01 	sts	0x0100, r25	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 276:	17 c0       	rjmp	.+46     	; 0x2a6 <comprobarque+0x1ae>
+				}
+			}
+			else if (caracter==7){
+ 278:	90 91 00 01 	lds	r25, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 27c:	97 30       	cpi	r25, 0x07	; 7
+ 27e:	99 f4       	brne	.+38     	; 0x2a6 <comprobarque+0x1ae>
+				if (opcion == 114){
+ 280:	82 37       	cpi	r24, 0x72	; 114
+ 282:	41 f4       	brne	.+16     	; 0x294 <comprobarque+0x19c>
+					PORTB &= ~(1<<PORTB1);
+ 284:	95 b1       	in	r25, 0x05	; 5
+ 286:	9d 7f       	andi	r25, 0xFD	; 253
+ 288:	95 b9       	out	0x05, r25	; 5
+					caracter=0;
+ 28a:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+					estado=0;
+ 28e:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <estado>
+ 292:	09 c0       	rjmp	.+18     	; 0x2a6 <comprobarque+0x1ae>
+				}
+				else if (opcion == 115){
+ 294:	83 37       	cpi	r24, 0x73	; 115
+ 296:	39 f4       	brne	.+14     	; 0x2a6 <comprobarque+0x1ae>
+					PORTB |= (1<<PORTB1);
+ 298:	95 b1       	in	r25, 0x05	; 5
+ 29a:	92 60       	ori	r25, 0x02	; 2
+ 29c:	95 b9       	out	0x05, r25	; 5
+					caracter=0;
+ 29e:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+					estado=0;
+ 2a2:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <estado>
+			}
+		
+		
+		//SEGUNDA PARTE
+
+ 		if(opcion == 116){	//OPCION ES 't'
+ 2a6:	84 37       	cpi	r24, 0x74	; 116
+ 2a8:	09 f0       	breq	.+2      	; 0x2ac <comprobarque+0x1b4>
+ 2aa:	b2 c2       	rjmp	.+1380   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+ 2ac:	c8 2f       	mov	r28, r24
+ 		spiWrite('c');
+ 2ae:	83 e6       	ldi	r24, 0x63	; 99
+ 2b0:	0e 94 9d 04 	call	0x93a	; 0x93a <spiWrite>
+ 		ValorSPI = spiRead();
+ 2b4:	0e 94 9f 04 	call	0x93e	; 0x93e <spiRead>
+ 2b8:	08 2f       	mov	r16, r24
+ 2ba:	10 e0       	ldi	r17, 0x00	; 0
+ 		//ValorSPI = map0(ValorSPI, 0, 255, 0, 500);
+  		
+		// Enviar el valor como cadena de texto
+		int centenas1 = (ValorSPI/100)*100;
+ 2bc:	98 01       	movw	r18, r16
+ 2be:	36 95       	lsr	r19
+ 2c0:	27 95       	ror	r18
+ 2c2:	36 95       	lsr	r19
+ 2c4:	27 95       	ror	r18
+ 2c6:	ab e7       	ldi	r26, 0x7B	; 123
+ 2c8:	b4 e1       	ldi	r27, 0x14	; 20
+ 2ca:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 2ce:	96 95       	lsr	r25
+ 2d0:	87 95       	ror	r24
+ 2d2:	24 e6       	ldi	r18, 0x64	; 100
+ 2d4:	28 9f       	mul	r18, r24
+ 2d6:	70 01       	movw	r14, r0
+ 2d8:	29 9f       	mul	r18, r25
+ 2da:	f0 0c       	add	r15, r0
+ 2dc:	11 24       	eor	r1, r1
+		int decenas1 = ((ValorSPI/10)% 10)*10;
+ 2de:	98 01       	movw	r18, r16
+ 2e0:	ad ec       	ldi	r26, 0xCD	; 205
+ 2e2:	bc ec       	ldi	r27, 0xCC	; 204
+ 2e4:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 2e8:	fc 01       	movw	r30, r24
+ 2ea:	f6 95       	lsr	r31
+ 2ec:	e7 95       	ror	r30
+ 2ee:	f6 95       	lsr	r31
+ 2f0:	e7 95       	ror	r30
+ 2f2:	f6 95       	lsr	r31
+ 2f4:	e7 95       	ror	r30
+ 2f6:	9f 01       	movw	r18, r30
+ 2f8:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 2fc:	96 95       	lsr	r25
+ 2fe:	87 95       	ror	r24
+ 300:	96 95       	lsr	r25
+ 302:	87 95       	ror	r24
+ 304:	96 95       	lsr	r25
+ 306:	87 95       	ror	r24
+ 308:	9c 01       	movw	r18, r24
+ 30a:	22 0f       	add	r18, r18
+ 30c:	33 1f       	adc	r19, r19
+ 30e:	88 0f       	add	r24, r24
+ 310:	99 1f       	adc	r25, r25
+ 312:	88 0f       	add	r24, r24
+ 314:	99 1f       	adc	r25, r25
+ 316:	88 0f       	add	r24, r24
+ 318:	99 1f       	adc	r25, r25
+ 31a:	82 0f       	add	r24, r18
+ 31c:	93 1f       	adc	r25, r19
+ 31e:	9f 01       	movw	r18, r30
+ 320:	28 1b       	sub	r18, r24
+ 322:	39 0b       	sbc	r19, r25
+ 324:	c9 01       	movw	r24, r18
+ 326:	a9 01       	movw	r20, r18
+ 328:	44 0f       	add	r20, r20
+ 32a:	55 1f       	adc	r21, r21
+ 32c:	88 0f       	add	r24, r24
+ 32e:	99 1f       	adc	r25, r25
+ 330:	88 0f       	add	r24, r24
+ 332:	99 1f       	adc	r25, r25
+ 334:	88 0f       	add	r24, r24
+ 336:	99 1f       	adc	r25, r25
+ 338:	84 0f       	add	r24, r20
+ 33a:	95 1f       	adc	r25, r21
+		int unidades1 = ValorSPI% 10;	
+ 33c:	9f 01       	movw	r18, r30
+ 33e:	22 0f       	add	r18, r18
+ 340:	33 1f       	adc	r19, r19
+ 342:	ee 0f       	add	r30, r30
+ 344:	ff 1f       	adc	r31, r31
+ 346:	ee 0f       	add	r30, r30
+ 348:	ff 1f       	adc	r31, r31
+ 34a:	ee 0f       	add	r30, r30
+ 34c:	ff 1f       	adc	r31, r31
+ 34e:	e2 0f       	add	r30, r18
+ 350:	f3 1f       	adc	r31, r19
+ 352:	98 01       	movw	r18, r16
+ 354:	2e 1b       	sub	r18, r30
+ 356:	3f 0b       	sbc	r19, r31
+		ValorSPI = centenas1+decenas1+unidades1;	
+ 358:	a7 01       	movw	r20, r14
+ 35a:	48 0f       	add	r20, r24
+ 35c:	59 1f       	adc	r21, r25
+ 35e:	24 0f       	add	r18, r20
+ 360:	35 1f       	adc	r19, r21
+ 362:	30 93 03 01 	sts	0x0103, r19	; 0x800103 <ValorSPI+0x1>
+ 366:	20 93 02 01 	sts	0x0102, r18	; 0x800102 <ValorSPI>
+//		writeUART('.');
+//   		writeUART(lista[decenas1]);
+//   		writeUART(lista[unidades1]);
+// 		   decenas1 = lista[decenas1];
+// 		   unidades1 = lista[unidades1];
+		if (ValorSPI <= 255){
+ 36a:	2f 3f       	cpi	r18, 0xFF	; 255
+ 36c:	31 05       	cpc	r19, r1
+ 36e:	11 f0       	breq	.+4      	; 0x374 <comprobarque+0x27c>
+ 370:	08 f0       	brcs	.+2      	; 0x374 <comprobarque+0x27c>
+ 372:	e8 c0       	rjmp	.+464    	; 0x544 <__EEPROM_REGION_LENGTH__+0x144>
+ 			if (ValorSPI == 0){
+ 374:	21 15       	cp	r18, r1
+ 376:	31 05       	cpc	r19, r1
+ 378:	21 f4       	brne	.+8      	; 0x382 <comprobarque+0x28a>
+ 				writeUART('0');
+ 37a:	80 e3       	ldi	r24, 0x30	; 48
+ 37c:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 380:	47 c2       	rjmp	.+1166   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if (ValorSPI >= 0 && ValorSPI < 10){
+ 382:	2a 30       	cpi	r18, 0x0A	; 10
+ 384:	31 05       	cpc	r19, r1
+ 386:	20 f4       	brcc	.+8      	; 0x390 <comprobarque+0x298>
+				writeUART('a');
+ 388:	81 e6       	ldi	r24, 0x61	; 97
+ 38a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 38e:	40 c2       	rjmp	.+1152   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 10 && ValorSPI < 20){
+ 390:	c9 01       	movw	r24, r18
+ 392:	0a 97       	sbiw	r24, 0x0a	; 10
+ 394:	0a 97       	sbiw	r24, 0x0a	; 10
+ 396:	20 f4       	brcc	.+8      	; 0x3a0 <comprobarque+0x2a8>
+				writeUART('b');
+ 398:	82 e6       	ldi	r24, 0x62	; 98
+ 39a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 39e:	38 c2       	rjmp	.+1136   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 20 && ValorSPI < 30){
+ 3a0:	c9 01       	movw	r24, r18
+ 3a2:	44 97       	sbiw	r24, 0x14	; 20
+ 3a4:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3a6:	20 f4       	brcc	.+8      	; 0x3b0 <comprobarque+0x2b8>
+				writeUART('c');
+ 3a8:	83 e6       	ldi	r24, 0x63	; 99
+ 3aa:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 3ae:	30 c2       	rjmp	.+1120   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 30 && ValorSPI < 40){
+ 3b0:	c9 01       	movw	r24, r18
+ 3b2:	4e 97       	sbiw	r24, 0x1e	; 30
+ 3b4:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3b6:	20 f4       	brcc	.+8      	; 0x3c0 <comprobarque+0x2c8>
+				writeUART('d');
+ 3b8:	84 e6       	ldi	r24, 0x64	; 100
+ 3ba:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 3be:	28 c2       	rjmp	.+1104   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 40 && ValorSPI < 50){
+ 3c0:	c9 01       	movw	r24, r18
+ 3c2:	88 97       	sbiw	r24, 0x28	; 40
+ 3c4:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3c6:	20 f4       	brcc	.+8      	; 0x3d0 <comprobarque+0x2d8>
+				writeUART('e');
+ 3c8:	85 e6       	ldi	r24, 0x65	; 101
+ 3ca:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 3ce:	20 c2       	rjmp	.+1088   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 50 && ValorSPI < 60){
+ 3d0:	c9 01       	movw	r24, r18
+ 3d2:	c2 97       	sbiw	r24, 0x32	; 50
+ 3d4:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3d6:	20 f4       	brcc	.+8      	; 0x3e0 <comprobarque+0x2e8>
+				writeUART('f');
+ 3d8:	86 e6       	ldi	r24, 0x66	; 102
+ 3da:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 3de:	18 c2       	rjmp	.+1072   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 60 && ValorSPI < 70){
+ 3e0:	c9 01       	movw	r24, r18
+ 3e2:	cc 97       	sbiw	r24, 0x3c	; 60
+ 3e4:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3e6:	20 f4       	brcc	.+8      	; 0x3f0 <comprobarque+0x2f8>
+				writeUART('g');
+ 3e8:	87 e6       	ldi	r24, 0x67	; 103
+ 3ea:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 3ee:	10 c2       	rjmp	.+1056   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 70 && ValorSPI < 80){
+ 3f0:	c9 01       	movw	r24, r18
+ 3f2:	86 54       	subi	r24, 0x46	; 70
+ 3f4:	91 09       	sbc	r25, r1
+ 3f6:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3f8:	20 f4       	brcc	.+8      	; 0x402 <__EEPROM_REGION_LENGTH__+0x2>
+				writeUART('h');
+ 3fa:	88 e6       	ldi	r24, 0x68	; 104
+ 3fc:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 400:	07 c2       	rjmp	.+1038   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 80 && ValorSPI < 90){
+ 402:	c9 01       	movw	r24, r18
+ 404:	80 55       	subi	r24, 0x50	; 80
+ 406:	91 09       	sbc	r25, r1
+ 408:	0a 97       	sbiw	r24, 0x0a	; 10
+ 40a:	20 f4       	brcc	.+8      	; 0x414 <__EEPROM_REGION_LENGTH__+0x14>
+				writeUART('i');
+ 40c:	89 e6       	ldi	r24, 0x69	; 105
+ 40e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 412:	fe c1       	rjmp	.+1020   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 90 && ValorSPI < 100){
+ 414:	c9 01       	movw	r24, r18
+ 416:	8a 55       	subi	r24, 0x5A	; 90
+ 418:	91 09       	sbc	r25, r1
+ 41a:	0a 97       	sbiw	r24, 0x0a	; 10
+ 41c:	20 f4       	brcc	.+8      	; 0x426 <__EEPROM_REGION_LENGTH__+0x26>
+				writeUART('j');
+ 41e:	8a e6       	ldi	r24, 0x6A	; 106
+ 420:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 424:	f5 c1       	rjmp	.+1002   	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 100 && ValorSPI < 110){
+ 426:	c9 01       	movw	r24, r18
+ 428:	84 56       	subi	r24, 0x64	; 100
+ 42a:	91 09       	sbc	r25, r1
+ 42c:	0a 97       	sbiw	r24, 0x0a	; 10
+ 42e:	20 f4       	brcc	.+8      	; 0x438 <__EEPROM_REGION_LENGTH__+0x38>
+				writeUART('k');
+ 430:	8b e6       	ldi	r24, 0x6B	; 107
+ 432:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 436:	ec c1       	rjmp	.+984    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 110 && ValorSPI < 120){
+ 438:	c9 01       	movw	r24, r18
+ 43a:	8e 56       	subi	r24, 0x6E	; 110
+ 43c:	91 09       	sbc	r25, r1
+ 43e:	0a 97       	sbiw	r24, 0x0a	; 10
+ 440:	20 f4       	brcc	.+8      	; 0x44a <__EEPROM_REGION_LENGTH__+0x4a>
+				writeUART('l');
+ 442:	8c e6       	ldi	r24, 0x6C	; 108
+ 444:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 448:	e3 c1       	rjmp	.+966    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 120 && ValorSPI < 130){
+ 44a:	c9 01       	movw	r24, r18
+ 44c:	88 57       	subi	r24, 0x78	; 120
+ 44e:	91 09       	sbc	r25, r1
+ 450:	0a 97       	sbiw	r24, 0x0a	; 10
+ 452:	20 f4       	brcc	.+8      	; 0x45c <__EEPROM_REGION_LENGTH__+0x5c>
+				writeUART('m');
+ 454:	8d e6       	ldi	r24, 0x6D	; 109
+ 456:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 45a:	da c1       	rjmp	.+948    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 130 && ValorSPI < 140){
+ 45c:	c9 01       	movw	r24, r18
+ 45e:	82 58       	subi	r24, 0x82	; 130
+ 460:	91 09       	sbc	r25, r1
+ 462:	0a 97       	sbiw	r24, 0x0a	; 10
+ 464:	20 f4       	brcc	.+8      	; 0x46e <__EEPROM_REGION_LENGTH__+0x6e>
+				writeUART('n');
+ 466:	8e e6       	ldi	r24, 0x6E	; 110
+ 468:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 46c:	d1 c1       	rjmp	.+930    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 140 && ValorSPI < 150){
+ 46e:	c9 01       	movw	r24, r18
+ 470:	8c 58       	subi	r24, 0x8C	; 140
+ 472:	91 09       	sbc	r25, r1
+ 474:	0a 97       	sbiw	r24, 0x0a	; 10
+ 476:	20 f4       	brcc	.+8      	; 0x480 <__EEPROM_REGION_LENGTH__+0x80>
+				writeUART('o');
+ 478:	8f e6       	ldi	r24, 0x6F	; 111
+ 47a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 47e:	c8 c1       	rjmp	.+912    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 150 && ValorSPI < 160){
+ 480:	c9 01       	movw	r24, r18
+ 482:	86 59       	subi	r24, 0x96	; 150
+ 484:	91 09       	sbc	r25, r1
+ 486:	0a 97       	sbiw	r24, 0x0a	; 10
+ 488:	20 f4       	brcc	.+8      	; 0x492 <__EEPROM_REGION_LENGTH__+0x92>
+				writeUART('p');
+ 48a:	80 e7       	ldi	r24, 0x70	; 112
+ 48c:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 490:	bf c1       	rjmp	.+894    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 160 && ValorSPI < 170){
+ 492:	c9 01       	movw	r24, r18
+ 494:	80 5a       	subi	r24, 0xA0	; 160
+ 496:	91 09       	sbc	r25, r1
+ 498:	0a 97       	sbiw	r24, 0x0a	; 10
+ 49a:	20 f4       	brcc	.+8      	; 0x4a4 <__EEPROM_REGION_LENGTH__+0xa4>
+				writeUART('q');
+ 49c:	81 e7       	ldi	r24, 0x71	; 113
+ 49e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4a2:	b6 c1       	rjmp	.+876    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 170 && ValorSPI < 180){
+ 4a4:	c9 01       	movw	r24, r18
+ 4a6:	8a 5a       	subi	r24, 0xAA	; 170
+ 4a8:	91 09       	sbc	r25, r1
+ 4aa:	0a 97       	sbiw	r24, 0x0a	; 10
+ 4ac:	20 f4       	brcc	.+8      	; 0x4b6 <__EEPROM_REGION_LENGTH__+0xb6>
+				writeUART('1');
+ 4ae:	81 e3       	ldi	r24, 0x31	; 49
+ 4b0:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4b4:	ad c1       	rjmp	.+858    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 180 && ValorSPI < 190){
+ 4b6:	c9 01       	movw	r24, r18
+ 4b8:	84 5b       	subi	r24, 0xB4	; 180
+ 4ba:	91 09       	sbc	r25, r1
+ 4bc:	0a 97       	sbiw	r24, 0x0a	; 10
+ 4be:	20 f4       	brcc	.+8      	; 0x4c8 <__EEPROM_REGION_LENGTH__+0xc8>
+				writeUART('2');
+ 4c0:	82 e3       	ldi	r24, 0x32	; 50
+ 4c2:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4c6:	a4 c1       	rjmp	.+840    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 190 && ValorSPI < 200){
+ 4c8:	c9 01       	movw	r24, r18
+ 4ca:	8e 5b       	subi	r24, 0xBE	; 190
+ 4cc:	91 09       	sbc	r25, r1
+ 4ce:	0a 97       	sbiw	r24, 0x0a	; 10
+ 4d0:	20 f4       	brcc	.+8      	; 0x4da <__EEPROM_REGION_LENGTH__+0xda>
+				writeUART('3');
+ 4d2:	83 e3       	ldi	r24, 0x33	; 51
+ 4d4:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4d8:	9b c1       	rjmp	.+822    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 200 && ValorSPI < 210){
+ 4da:	c9 01       	movw	r24, r18
+ 4dc:	88 5c       	subi	r24, 0xC8	; 200
+ 4de:	91 09       	sbc	r25, r1
+ 4e0:	0a 97       	sbiw	r24, 0x0a	; 10
+ 4e2:	20 f4       	brcc	.+8      	; 0x4ec <__EEPROM_REGION_LENGTH__+0xec>
+				writeUART('4');
+ 4e4:	84 e3       	ldi	r24, 0x34	; 52
+ 4e6:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4ea:	92 c1       	rjmp	.+804    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 210 && ValorSPI < 220){
+ 4ec:	c9 01       	movw	r24, r18
+ 4ee:	82 5d       	subi	r24, 0xD2	; 210
+ 4f0:	91 09       	sbc	r25, r1
+ 4f2:	0a 97       	sbiw	r24, 0x0a	; 10
+ 4f4:	20 f4       	brcc	.+8      	; 0x4fe <__EEPROM_REGION_LENGTH__+0xfe>
+				writeUART('5');
+ 4f6:	85 e3       	ldi	r24, 0x35	; 53
+ 4f8:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 4fc:	89 c1       	rjmp	.+786    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 220 && ValorSPI < 230){
+ 4fe:	c9 01       	movw	r24, r18
+ 500:	8c 5d       	subi	r24, 0xDC	; 220
+ 502:	91 09       	sbc	r25, r1
+ 504:	0a 97       	sbiw	r24, 0x0a	; 10
+ 506:	20 f4       	brcc	.+8      	; 0x510 <__EEPROM_REGION_LENGTH__+0x110>
+				writeUART('6');
+ 508:	86 e3       	ldi	r24, 0x36	; 54
+ 50a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 50e:	80 c1       	rjmp	.+768    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 230 && ValorSPI < 240){
+ 510:	c9 01       	movw	r24, r18
+ 512:	86 5e       	subi	r24, 0xE6	; 230
+ 514:	91 09       	sbc	r25, r1
+ 516:	0a 97       	sbiw	r24, 0x0a	; 10
+ 518:	20 f4       	brcc	.+8      	; 0x522 <__EEPROM_REGION_LENGTH__+0x122>
+				writeUART('7');
+ 51a:	87 e3       	ldi	r24, 0x37	; 55
+ 51c:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 520:	77 c1       	rjmp	.+750    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 240 && ValorSPI < 250){
+ 522:	c9 01       	movw	r24, r18
+ 524:	80 5f       	subi	r24, 0xF0	; 240
+ 526:	91 09       	sbc	r25, r1
+ 528:	0a 97       	sbiw	r24, 0x0a	; 10
+ 52a:	20 f4       	brcc	.+8      	; 0x534 <__EEPROM_REGION_LENGTH__+0x134>
+				writeUART('8');
+ 52c:	88 e3       	ldi	r24, 0x38	; 56
+ 52e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 532:	6e c1       	rjmp	.+732    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}else if(ValorSPI >= 250){
+ 534:	2a 3f       	cpi	r18, 0xFA	; 250
+ 536:	31 05       	cpc	r19, r1
+ 538:	08 f4       	brcc	.+2      	; 0x53c <__EEPROM_REGION_LENGTH__+0x13c>
+ 53a:	6a c1       	rjmp	.+724    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+				writeUART('9');}
+ 53c:	89 e3       	ldi	r24, 0x39	; 57
+ 53e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 542:	66 c1       	rjmp	.+716    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+			}
+			
+			else if(opcion == 117){	//OPCION ES 'u'
+ 544:	c5 37       	cpi	r28, 0x75	; 117
+ 546:	09 f0       	breq	.+2      	; 0x54a <__EEPROM_REGION_LENGTH__+0x14a>
+ 548:	63 c1       	rjmp	.+710    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+				spiWrite('d');
+ 54a:	84 e6       	ldi	r24, 0x64	; 100
+ 54c:	0e 94 9d 04 	call	0x93a	; 0x93a <spiWrite>
+				ValorSPI = spiRead();
+ 550:	0e 94 9f 04 	call	0x93e	; 0x93e <spiRead>
+ 554:	e8 2f       	mov	r30, r24
+ 556:	f0 e0       	ldi	r31, 0x00	; 0
+				//ValorSPI = map0(ValorSPI, 0, 255, 0, 500);
+				
+				// Enviar el valor como cadena de texto
+				int centenas2 = (ValorSPI/100)*100;
+ 558:	9f 01       	movw	r18, r30
+ 55a:	36 95       	lsr	r19
+ 55c:	27 95       	ror	r18
+ 55e:	36 95       	lsr	r19
+ 560:	27 95       	ror	r18
+ 562:	ab e7       	ldi	r26, 0x7B	; 123
+ 564:	b4 e1       	ldi	r27, 0x14	; 20
+ 566:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 56a:	96 95       	lsr	r25
+ 56c:	87 95       	ror	r24
+ 56e:	24 e6       	ldi	r18, 0x64	; 100
+ 570:	28 9f       	mul	r18, r24
+ 572:	80 01       	movw	r16, r0
+ 574:	29 9f       	mul	r18, r25
+ 576:	10 0d       	add	r17, r0
+ 578:	11 24       	eor	r1, r1
+				int decenas2 = ((ValorSPI/10)% 10)*10;
+ 57a:	9f 01       	movw	r18, r30
+ 57c:	ad ec       	ldi	r26, 0xCD	; 205
+ 57e:	bc ec       	ldi	r27, 0xCC	; 204
+ 580:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 584:	ac 01       	movw	r20, r24
+ 586:	56 95       	lsr	r21
+ 588:	47 95       	ror	r20
+ 58a:	56 95       	lsr	r21
+ 58c:	47 95       	ror	r20
+ 58e:	56 95       	lsr	r21
+ 590:	47 95       	ror	r20
+ 592:	9a 01       	movw	r18, r20
+ 594:	0e 94 cc 04 	call	0x998	; 0x998 <__umulhisi3>
+ 598:	96 95       	lsr	r25
+ 59a:	87 95       	ror	r24
+ 59c:	96 95       	lsr	r25
+ 59e:	87 95       	ror	r24
+ 5a0:	96 95       	lsr	r25
+ 5a2:	87 95       	ror	r24
+ 5a4:	9c 01       	movw	r18, r24
+ 5a6:	22 0f       	add	r18, r18
+ 5a8:	33 1f       	adc	r19, r19
+ 5aa:	88 0f       	add	r24, r24
+ 5ac:	99 1f       	adc	r25, r25
+ 5ae:	88 0f       	add	r24, r24
+ 5b0:	99 1f       	adc	r25, r25
+ 5b2:	88 0f       	add	r24, r24
+ 5b4:	99 1f       	adc	r25, r25
+ 5b6:	82 0f       	add	r24, r18
+ 5b8:	93 1f       	adc	r25, r19
+ 5ba:	9a 01       	movw	r18, r20
+ 5bc:	28 1b       	sub	r18, r24
+ 5be:	39 0b       	sbc	r19, r25
+ 5c0:	c9 01       	movw	r24, r18
+ 5c2:	22 0f       	add	r18, r18
+ 5c4:	33 1f       	adc	r19, r19
+ 5c6:	88 0f       	add	r24, r24
+ 5c8:	99 1f       	adc	r25, r25
+ 5ca:	88 0f       	add	r24, r24
+ 5cc:	99 1f       	adc	r25, r25
+ 5ce:	88 0f       	add	r24, r24
+ 5d0:	99 1f       	adc	r25, r25
+ 5d2:	82 0f       	add	r24, r18
+ 5d4:	93 1f       	adc	r25, r19
+				int unidades2 = ValorSPI% 10;
+ 5d6:	9a 01       	movw	r18, r20
+ 5d8:	22 0f       	add	r18, r18
+ 5da:	33 1f       	adc	r19, r19
+ 5dc:	44 0f       	add	r20, r20
+ 5de:	55 1f       	adc	r21, r21
+ 5e0:	44 0f       	add	r20, r20
+ 5e2:	55 1f       	adc	r21, r21
+ 5e4:	44 0f       	add	r20, r20
+ 5e6:	55 1f       	adc	r21, r21
+ 5e8:	42 0f       	add	r20, r18
+ 5ea:	53 1f       	adc	r21, r19
+ 5ec:	e4 1b       	sub	r30, r20
+ 5ee:	f5 0b       	sbc	r31, r21
+				ValorSPI = centenas2+decenas2+unidades2;
+ 5f0:	80 0f       	add	r24, r16
+ 5f2:	91 1f       	adc	r25, r17
+ 5f4:	8e 0f       	add	r24, r30
+ 5f6:	9f 1f       	adc	r25, r31
+ 5f8:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <ValorSPI+0x1>
+ 5fc:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <ValorSPI>
+				//		writeUART('.');
+				//   		writeUART(lista[decenas1]);
+				//   		writeUART(lista[unidades1]);
+				// 		   decenas1 = lista[decenas1];
+				// 		   unidades1 = lista[unidades1];
+				if (ValorSPI <= 255){
+ 600:	8f 3f       	cpi	r24, 0xFF	; 255
+ 602:	91 05       	cpc	r25, r1
+ 604:	11 f0       	breq	.+4      	; 0x60a <__EEPROM_REGION_LENGTH__+0x20a>
+ 606:	08 f0       	brcs	.+2      	; 0x60a <__EEPROM_REGION_LENGTH__+0x20a>
+ 608:	03 c1       	rjmp	.+518    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					if (ValorSPI == 0){
+ 60a:	00 97       	sbiw	r24, 0x00	; 0
+ 60c:	21 f4       	brne	.+8      	; 0x616 <__EEPROM_REGION_LENGTH__+0x216>
+					writeUART('A');
+ 60e:	81 e4       	ldi	r24, 0x41	; 65
+ 610:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 614:	fd c0       	rjmp	.+506    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if (ValorSPI >= 0 && ValorSPI < 10){
+ 616:	8a 30       	cpi	r24, 0x0A	; 10
+ 618:	91 05       	cpc	r25, r1
+ 61a:	20 f4       	brcc	.+8      	; 0x624 <__EEPROM_REGION_LENGTH__+0x224>
+					writeUART('B');
+ 61c:	82 e4       	ldi	r24, 0x42	; 66
+ 61e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 622:	f6 c0       	rjmp	.+492    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 10 && ValorSPI < 20){
+ 624:	9c 01       	movw	r18, r24
+ 626:	2a 50       	subi	r18, 0x0A	; 10
+ 628:	31 09       	sbc	r19, r1
+ 62a:	2a 30       	cpi	r18, 0x0A	; 10
+ 62c:	31 05       	cpc	r19, r1
+ 62e:	20 f4       	brcc	.+8      	; 0x638 <__EEPROM_REGION_LENGTH__+0x238>
+					writeUART('C');
+ 630:	83 e4       	ldi	r24, 0x43	; 67
+ 632:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 636:	ec c0       	rjmp	.+472    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 20 && ValorSPI < 30){
+ 638:	9c 01       	movw	r18, r24
+ 63a:	24 51       	subi	r18, 0x14	; 20
+ 63c:	31 09       	sbc	r19, r1
+ 63e:	2a 30       	cpi	r18, 0x0A	; 10
+ 640:	31 05       	cpc	r19, r1
+ 642:	20 f4       	brcc	.+8      	; 0x64c <__EEPROM_REGION_LENGTH__+0x24c>
+					writeUART('D');
+ 644:	84 e4       	ldi	r24, 0x44	; 68
+ 646:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 64a:	e2 c0       	rjmp	.+452    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 30 && ValorSPI < 40){
+ 64c:	9c 01       	movw	r18, r24
+ 64e:	2e 51       	subi	r18, 0x1E	; 30
+ 650:	31 09       	sbc	r19, r1
+ 652:	2a 30       	cpi	r18, 0x0A	; 10
+ 654:	31 05       	cpc	r19, r1
+ 656:	20 f4       	brcc	.+8      	; 0x660 <__EEPROM_REGION_LENGTH__+0x260>
+					writeUART('E');
+ 658:	85 e4       	ldi	r24, 0x45	; 69
+ 65a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 65e:	d8 c0       	rjmp	.+432    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 40 && ValorSPI < 50){
+ 660:	9c 01       	movw	r18, r24
+ 662:	28 52       	subi	r18, 0x28	; 40
+ 664:	31 09       	sbc	r19, r1
+ 666:	2a 30       	cpi	r18, 0x0A	; 10
+ 668:	31 05       	cpc	r19, r1
+ 66a:	20 f4       	brcc	.+8      	; 0x674 <__EEPROM_REGION_LENGTH__+0x274>
+					writeUART('F');
+ 66c:	86 e4       	ldi	r24, 0x46	; 70
+ 66e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 672:	ce c0       	rjmp	.+412    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 50 && ValorSPI < 60){
+ 674:	9c 01       	movw	r18, r24
+ 676:	22 53       	subi	r18, 0x32	; 50
+ 678:	31 09       	sbc	r19, r1
+ 67a:	2a 30       	cpi	r18, 0x0A	; 10
+ 67c:	31 05       	cpc	r19, r1
+ 67e:	20 f4       	brcc	.+8      	; 0x688 <__EEPROM_REGION_LENGTH__+0x288>
+					writeUART('G');
+ 680:	87 e4       	ldi	r24, 0x47	; 71
+ 682:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 686:	c4 c0       	rjmp	.+392    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 60 && ValorSPI < 70){
+ 688:	9c 01       	movw	r18, r24
+ 68a:	2c 53       	subi	r18, 0x3C	; 60
+ 68c:	31 09       	sbc	r19, r1
+ 68e:	2a 30       	cpi	r18, 0x0A	; 10
+ 690:	31 05       	cpc	r19, r1
+ 692:	20 f4       	brcc	.+8      	; 0x69c <__EEPROM_REGION_LENGTH__+0x29c>
+					writeUART('H');
+ 694:	88 e4       	ldi	r24, 0x48	; 72
+ 696:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 69a:	ba c0       	rjmp	.+372    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 70 && ValorSPI < 80){
+ 69c:	9c 01       	movw	r18, r24
+ 69e:	26 54       	subi	r18, 0x46	; 70
+ 6a0:	31 09       	sbc	r19, r1
+ 6a2:	2a 30       	cpi	r18, 0x0A	; 10
+ 6a4:	31 05       	cpc	r19, r1
+ 6a6:	20 f4       	brcc	.+8      	; 0x6b0 <__EEPROM_REGION_LENGTH__+0x2b0>
+					writeUART('I');
+ 6a8:	89 e4       	ldi	r24, 0x49	; 73
+ 6aa:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 6ae:	b0 c0       	rjmp	.+352    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 80 && ValorSPI < 90){
+ 6b0:	9c 01       	movw	r18, r24
+ 6b2:	20 55       	subi	r18, 0x50	; 80
+ 6b4:	31 09       	sbc	r19, r1
+ 6b6:	2a 30       	cpi	r18, 0x0A	; 10
+ 6b8:	31 05       	cpc	r19, r1
+ 6ba:	20 f4       	brcc	.+8      	; 0x6c4 <__EEPROM_REGION_LENGTH__+0x2c4>
+					writeUART('J');
+ 6bc:	8a e4       	ldi	r24, 0x4A	; 74
+ 6be:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 6c2:	a6 c0       	rjmp	.+332    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 90 && ValorSPI < 100){
+ 6c4:	9c 01       	movw	r18, r24
+ 6c6:	2a 55       	subi	r18, 0x5A	; 90
+ 6c8:	31 09       	sbc	r19, r1
+ 6ca:	2a 30       	cpi	r18, 0x0A	; 10
+ 6cc:	31 05       	cpc	r19, r1
+ 6ce:	20 f4       	brcc	.+8      	; 0x6d8 <__EEPROM_REGION_LENGTH__+0x2d8>
+					writeUART('K');
+ 6d0:	8b e4       	ldi	r24, 0x4B	; 75
+ 6d2:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 6d6:	9c c0       	rjmp	.+312    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 100 && ValorSPI < 110){
+ 6d8:	9c 01       	movw	r18, r24
+ 6da:	24 56       	subi	r18, 0x64	; 100
+ 6dc:	31 09       	sbc	r19, r1
+ 6de:	2a 30       	cpi	r18, 0x0A	; 10
+ 6e0:	31 05       	cpc	r19, r1
+ 6e2:	20 f4       	brcc	.+8      	; 0x6ec <__EEPROM_REGION_LENGTH__+0x2ec>
+					writeUART('L');
+ 6e4:	8c e4       	ldi	r24, 0x4C	; 76
+ 6e6:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 6ea:	92 c0       	rjmp	.+292    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 110 && ValorSPI < 120){
+ 6ec:	9c 01       	movw	r18, r24
+ 6ee:	2e 56       	subi	r18, 0x6E	; 110
+ 6f0:	31 09       	sbc	r19, r1
+ 6f2:	2a 30       	cpi	r18, 0x0A	; 10
+ 6f4:	31 05       	cpc	r19, r1
+ 6f6:	20 f4       	brcc	.+8      	; 0x700 <__EEPROM_REGION_LENGTH__+0x300>
+					writeUART('M');
+ 6f8:	8d e4       	ldi	r24, 0x4D	; 77
+ 6fa:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 6fe:	88 c0       	rjmp	.+272    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 120 && ValorSPI < 130){
+ 700:	9c 01       	movw	r18, r24
+ 702:	28 57       	subi	r18, 0x78	; 120
+ 704:	31 09       	sbc	r19, r1
+ 706:	2a 30       	cpi	r18, 0x0A	; 10
+ 708:	31 05       	cpc	r19, r1
+ 70a:	20 f4       	brcc	.+8      	; 0x714 <__EEPROM_REGION_LENGTH__+0x314>
+					writeUART('N');
+ 70c:	8e e4       	ldi	r24, 0x4E	; 78
+ 70e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 712:	7e c0       	rjmp	.+252    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 130 && ValorSPI < 140){
+ 714:	9c 01       	movw	r18, r24
+ 716:	22 58       	subi	r18, 0x82	; 130
+ 718:	31 09       	sbc	r19, r1
+ 71a:	2a 30       	cpi	r18, 0x0A	; 10
+ 71c:	31 05       	cpc	r19, r1
+ 71e:	20 f4       	brcc	.+8      	; 0x728 <__EEPROM_REGION_LENGTH__+0x328>
+					writeUART('O');
+ 720:	8f e4       	ldi	r24, 0x4F	; 79
+ 722:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 726:	74 c0       	rjmp	.+232    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 140 && ValorSPI < 150){
+ 728:	9c 01       	movw	r18, r24
+ 72a:	2c 58       	subi	r18, 0x8C	; 140
+ 72c:	31 09       	sbc	r19, r1
+ 72e:	2a 30       	cpi	r18, 0x0A	; 10
+ 730:	31 05       	cpc	r19, r1
+ 732:	20 f4       	brcc	.+8      	; 0x73c <__EEPROM_REGION_LENGTH__+0x33c>
+					writeUART('P');
+ 734:	80 e5       	ldi	r24, 0x50	; 80
+ 736:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 73a:	6a c0       	rjmp	.+212    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 150 && ValorSPI < 160){
+ 73c:	9c 01       	movw	r18, r24
+ 73e:	26 59       	subi	r18, 0x96	; 150
+ 740:	31 09       	sbc	r19, r1
+ 742:	2a 30       	cpi	r18, 0x0A	; 10
+ 744:	31 05       	cpc	r19, r1
+ 746:	20 f4       	brcc	.+8      	; 0x750 <__EEPROM_REGION_LENGTH__+0x350>
+					writeUART('Q');
+ 748:	81 e5       	ldi	r24, 0x51	; 81
+ 74a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 74e:	60 c0       	rjmp	.+192    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 160 && ValorSPI < 170){
+ 750:	9c 01       	movw	r18, r24
+ 752:	20 5a       	subi	r18, 0xA0	; 160
+ 754:	31 09       	sbc	r19, r1
+ 756:	2a 30       	cpi	r18, 0x0A	; 10
+ 758:	31 05       	cpc	r19, r1
+ 75a:	20 f4       	brcc	.+8      	; 0x764 <__EEPROM_REGION_LENGTH__+0x364>
+					writeUART('R');
+ 75c:	82 e5       	ldi	r24, 0x52	; 82
+ 75e:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 762:	56 c0       	rjmp	.+172    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 170 && ValorSPI < 180){
+ 764:	9c 01       	movw	r18, r24
+ 766:	2a 5a       	subi	r18, 0xAA	; 170
+ 768:	31 09       	sbc	r19, r1
+ 76a:	2a 30       	cpi	r18, 0x0A	; 10
+ 76c:	31 05       	cpc	r19, r1
+ 76e:	20 f4       	brcc	.+8      	; 0x778 <__EEPROM_REGION_LENGTH__+0x378>
+					writeUART('S');
+ 770:	83 e5       	ldi	r24, 0x53	; 83
+ 772:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 776:	4c c0       	rjmp	.+152    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 180 && ValorSPI < 190){
+ 778:	9c 01       	movw	r18, r24
+ 77a:	24 5b       	subi	r18, 0xB4	; 180
+ 77c:	31 09       	sbc	r19, r1
+ 77e:	2a 30       	cpi	r18, 0x0A	; 10
+ 780:	31 05       	cpc	r19, r1
+ 782:	20 f4       	brcc	.+8      	; 0x78c <__EEPROM_REGION_LENGTH__+0x38c>
+					writeUART('T');
+ 784:	84 e5       	ldi	r24, 0x54	; 84
+ 786:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 78a:	42 c0       	rjmp	.+132    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 190 && ValorSPI < 200){
+ 78c:	9c 01       	movw	r18, r24
+ 78e:	2e 5b       	subi	r18, 0xBE	; 190
+ 790:	31 09       	sbc	r19, r1
+ 792:	2a 30       	cpi	r18, 0x0A	; 10
+ 794:	31 05       	cpc	r19, r1
+ 796:	20 f4       	brcc	.+8      	; 0x7a0 <__EEPROM_REGION_LENGTH__+0x3a0>
+					writeUART('U');
+ 798:	85 e5       	ldi	r24, 0x55	; 85
+ 79a:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 79e:	38 c0       	rjmp	.+112    	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 200 && ValorSPI < 210){
+ 7a0:	9c 01       	movw	r18, r24
+ 7a2:	28 5c       	subi	r18, 0xC8	; 200
+ 7a4:	31 09       	sbc	r19, r1
+ 7a6:	2a 30       	cpi	r18, 0x0A	; 10
+ 7a8:	31 05       	cpc	r19, r1
+ 7aa:	20 f4       	brcc	.+8      	; 0x7b4 <__EEPROM_REGION_LENGTH__+0x3b4>
+					writeUART('V');
+ 7ac:	86 e5       	ldi	r24, 0x56	; 86
+ 7ae:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 7b2:	2e c0       	rjmp	.+92     	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 210 && ValorSPI < 220){
+ 7b4:	9c 01       	movw	r18, r24
+ 7b6:	22 5d       	subi	r18, 0xD2	; 210
+ 7b8:	31 09       	sbc	r19, r1
+ 7ba:	2a 30       	cpi	r18, 0x0A	; 10
+ 7bc:	31 05       	cpc	r19, r1
+ 7be:	20 f4       	brcc	.+8      	; 0x7c8 <__EEPROM_REGION_LENGTH__+0x3c8>
+					writeUART('W');
+ 7c0:	87 e5       	ldi	r24, 0x57	; 87
+ 7c2:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 7c6:	24 c0       	rjmp	.+72     	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 220 && ValorSPI < 230){
+ 7c8:	9c 01       	movw	r18, r24
+ 7ca:	2c 5d       	subi	r18, 0xDC	; 220
+ 7cc:	31 09       	sbc	r19, r1
+ 7ce:	2a 30       	cpi	r18, 0x0A	; 10
+ 7d0:	31 05       	cpc	r19, r1
+ 7d2:	20 f4       	brcc	.+8      	; 0x7dc <__EEPROM_REGION_LENGTH__+0x3dc>
+					writeUART('X');
+ 7d4:	88 e5       	ldi	r24, 0x58	; 88
+ 7d6:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 7da:	1a c0       	rjmp	.+52     	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 230 && ValorSPI < 240){
+ 7dc:	9c 01       	movw	r18, r24
+ 7de:	26 5e       	subi	r18, 0xE6	; 230
+ 7e0:	31 09       	sbc	r19, r1
+ 7e2:	2a 30       	cpi	r18, 0x0A	; 10
+ 7e4:	31 05       	cpc	r19, r1
+ 7e6:	20 f4       	brcc	.+8      	; 0x7f0 <__EEPROM_REGION_LENGTH__+0x3f0>
+					writeUART('Y');
+ 7e8:	89 e5       	ldi	r24, 0x59	; 89
+ 7ea:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 7ee:	10 c0       	rjmp	.+32     	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 240 && ValorSPI < 250){
+ 7f0:	9c 01       	movw	r18, r24
+ 7f2:	20 5f       	subi	r18, 0xF0	; 240
+ 7f4:	31 09       	sbc	r19, r1
+ 7f6:	2a 30       	cpi	r18, 0x0A	; 10
+ 7f8:	31 05       	cpc	r19, r1
+ 7fa:	20 f4       	brcc	.+8      	; 0x804 <__DATA_REGION_LENGTH__+0x4>
+					writeUART('Z');
+ 7fc:	8a e5       	ldi	r24, 0x5A	; 90
+ 7fe:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+ 802:	06 c0       	rjmp	.+12     	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					}else if(ValorSPI >= 250){
+ 804:	8a 3f       	cpi	r24, 0xFA	; 250
+ 806:	91 05       	cpc	r25, r1
+ 808:	18 f0       	brcs	.+6      	; 0x810 <__DATA_REGION_LENGTH__+0x10>
+					writeUART('.');}
+ 80a:	8e e2       	ldi	r24, 0x2E	; 46
+ 80c:	0e 94 bf 04 	call	0x97e	; 0x97e <writeUART>
+					}
+					}
+		}
+}
+ 810:	cf 91       	pop	r28
+ 812:	1f 91       	pop	r17
+ 814:	0f 91       	pop	r16
+ 816:	ff 90       	pop	r15
+ 818:	ef 90       	pop	r14
+ 81a:	08 95       	ret
+
+0000081c <__vector_18>:
+
+ISR(USART_RX_vect){
+ 81c:	1f 92       	push	r1
+ 81e:	0f 92       	push	r0
+ 820:	0f b6       	in	r0, 0x3f	; 63
+ 822:	0f 92       	push	r0
+ 824:	11 24       	eor	r1, r1
+ 826:	2f 93       	push	r18
+ 828:	3f 93       	push	r19
+ 82a:	4f 93       	push	r20
+ 82c:	5f 93       	push	r21
+ 82e:	6f 93       	push	r22
+ 830:	7f 93       	push	r23
+ 832:	8f 93       	push	r24
+ 834:	9f 93       	push	r25
+ 836:	af 93       	push	r26
+ 838:	bf 93       	push	r27
+ 83a:	ef 93       	push	r30
+ 83c:	ff 93       	push	r31
+	
+	//bufferTX = UDR0;
+	//while(!(UCSR0A & (1<<UDRE0)));
+	//UDR0 = bufferTX;
+	
+	opcion = UDR0;
+ 83e:	80 91 c6 00 	lds	r24, 0x00C6	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 842:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <opcion>
+	//UARTCHANEL(valorUART);
+	comprobarque(opcion);
+ 846:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <opcion>
+ 84a:	0e 94 7c 00 	call	0xf8	; 0xf8 <comprobarque>
+	
+// 	writeUART(10);
+// 	writeUART(13);
+}
+ 84e:	ff 91       	pop	r31
+ 850:	ef 91       	pop	r30
+ 852:	bf 91       	pop	r27
+ 854:	af 91       	pop	r26
+ 856:	9f 91       	pop	r25
+ 858:	8f 91       	pop	r24
+ 85a:	7f 91       	pop	r23
+ 85c:	6f 91       	pop	r22
+ 85e:	5f 91       	pop	r21
+ 860:	4f 91       	pop	r20
+ 862:	3f 91       	pop	r19
+ 864:	2f 91       	pop	r18
+ 866:	0f 90       	pop	r0
+ 868:	0f be       	out	0x3f, r0	; 63
+ 86a:	0f 90       	pop	r0
+ 86c:	1f 90       	pop	r1
+ 86e:	18 95       	reti
+
+00000870 <InitSPI>:
+{
+	if (SPSR & (1<<SPIF))
+	return 1;
+	else
+	return 0;
+}
+ 870:	e8 2f       	mov	r30, r24
+ 872:	84 ff       	sbrs	r24, 4
+ 874:	52 c0       	rjmp	.+164    	; 0x91a <__stack+0x1b>
+ 876:	84 b1       	in	r24, 0x04	; 4
+ 878:	8c 62       	ori	r24, 0x2C	; 44
+ 87a:	84 b9       	out	0x04, r24	; 4
+ 87c:	84 b1       	in	r24, 0x04	; 4
+ 87e:	8f 7e       	andi	r24, 0xEF	; 239
+ 880:	84 b9       	out	0x04, r24	; 4
+ 882:	8c b5       	in	r24, 0x2c	; 44
+ 884:	80 61       	ori	r24, 0x10	; 16
+ 886:	8c bd       	out	0x2c, r24	; 44
+ 888:	e7 70       	andi	r30, 0x07	; 7
+ 88a:	8e 2f       	mov	r24, r30
+ 88c:	90 e0       	ldi	r25, 0x00	; 0
+ 88e:	87 30       	cpi	r24, 0x07	; 7
+ 890:	91 05       	cpc	r25, r1
+ 892:	08 f0       	brcs	.+2      	; 0x896 <InitSPI+0x26>
+ 894:	4b c0       	rjmp	.+150    	; 0x92c <__stack+0x2d>
+ 896:	fc 01       	movw	r30, r24
+ 898:	ec 5c       	subi	r30, 0xCC	; 204
+ 89a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 89c:	0c 94 c6 04 	jmp	0x98c	; 0x98c <__tablejump2__>
+ 8a0:	8c b5       	in	r24, 0x2c	; 44
+ 8a2:	8c 7f       	andi	r24, 0xFC	; 252
+ 8a4:	8c bd       	out	0x2c, r24	; 44
+ 8a6:	8d b5       	in	r24, 0x2d	; 45
+ 8a8:	81 60       	ori	r24, 0x01	; 1
+ 8aa:	8d bd       	out	0x2d, r24	; 45
+ 8ac:	3f c0       	rjmp	.+126    	; 0x92c <__stack+0x2d>
+ 8ae:	8c b5       	in	r24, 0x2c	; 44
+ 8b0:	8c 7f       	andi	r24, 0xFC	; 252
+ 8b2:	8c bd       	out	0x2c, r24	; 44
+ 8b4:	8d b5       	in	r24, 0x2d	; 45
+ 8b6:	8e 7f       	andi	r24, 0xFE	; 254
+ 8b8:	8d bd       	out	0x2d, r24	; 45
+ 8ba:	38 c0       	rjmp	.+112    	; 0x92c <__stack+0x2d>
+ 8bc:	8c b5       	in	r24, 0x2c	; 44
+ 8be:	81 60       	ori	r24, 0x01	; 1
+ 8c0:	8c bd       	out	0x2c, r24	; 44
+ 8c2:	8c b5       	in	r24, 0x2c	; 44
+ 8c4:	8d 7f       	andi	r24, 0xFD	; 253
+ 8c6:	8c bd       	out	0x2c, r24	; 44
+ 8c8:	8d b5       	in	r24, 0x2d	; 45
+ 8ca:	81 60       	ori	r24, 0x01	; 1
+ 8cc:	8d bd       	out	0x2d, r24	; 45
+ 8ce:	2e c0       	rjmp	.+92     	; 0x92c <__stack+0x2d>
+ 8d0:	8c b5       	in	r24, 0x2c	; 44
+ 8d2:	81 60       	ori	r24, 0x01	; 1
+ 8d4:	8c bd       	out	0x2c, r24	; 44
+ 8d6:	8c b5       	in	r24, 0x2c	; 44
+ 8d8:	8d 7f       	andi	r24, 0xFD	; 253
+ 8da:	8c bd       	out	0x2c, r24	; 44
+ 8dc:	8d b5       	in	r24, 0x2d	; 45
+ 8de:	8e 7f       	andi	r24, 0xFE	; 254
+ 8e0:	8d bd       	out	0x2d, r24	; 45
+ 8e2:	24 c0       	rjmp	.+72     	; 0x92c <__stack+0x2d>
+ 8e4:	8c b5       	in	r24, 0x2c	; 44
+ 8e6:	8e 7f       	andi	r24, 0xFE	; 254
+ 8e8:	8c bd       	out	0x2c, r24	; 44
+ 8ea:	8c b5       	in	r24, 0x2c	; 44
+ 8ec:	82 60       	ori	r24, 0x02	; 2
+ 8ee:	8c bd       	out	0x2c, r24	; 44
+ 8f0:	8d b5       	in	r24, 0x2d	; 45
+ 8f2:	81 60       	ori	r24, 0x01	; 1
+ 8f4:	8d bd       	out	0x2d, r24	; 45
+ 8f6:	1a c0       	rjmp	.+52     	; 0x92c <__stack+0x2d>
+ 8f8:	8c b5       	in	r24, 0x2c	; 44
+ 8fa:	8e 7f       	andi	r24, 0xFE	; 254
+ 8fc:	8c bd       	out	0x2c, r24	; 44
+ 8fe:	8c b5       	in	r24, 0x2c	; 44
+ 900:	82 60       	ori	r24, 0x02	; 2
+ 902:	8c bd       	out	0x2c, r24	; 44
+ 904:	8d b5       	in	r24, 0x2d	; 45
+ 906:	8e 7f       	andi	r24, 0xFE	; 254
+ 908:	8d bd       	out	0x2d, r24	; 45
+ 90a:	10 c0       	rjmp	.+32     	; 0x92c <__stack+0x2d>
+ 90c:	8c b5       	in	r24, 0x2c	; 44
+ 90e:	83 60       	ori	r24, 0x03	; 3
+ 910:	8c bd       	out	0x2c, r24	; 44
+ 912:	8d b5       	in	r24, 0x2d	; 45
+ 914:	8e 7f       	andi	r24, 0xFE	; 254
+ 916:	8d bd       	out	0x2d, r24	; 45
+ 918:	09 c0       	rjmp	.+18     	; 0x92c <__stack+0x2d>
+ 91a:	84 b1       	in	r24, 0x04	; 4
+ 91c:	80 61       	ori	r24, 0x10	; 16
+ 91e:	84 b9       	out	0x04, r24	; 4
+ 920:	84 b1       	in	r24, 0x04	; 4
+ 922:	83 7d       	andi	r24, 0xD3	; 211
+ 924:	84 b9       	out	0x04, r24	; 4
+ 926:	8c b5       	in	r24, 0x2c	; 44
+ 928:	8f 7e       	andi	r24, 0xEF	; 239
+ 92a:	8c bd       	out	0x2c, r24	; 44
+ 92c:	8c b5       	in	r24, 0x2c	; 44
+ 92e:	46 2b       	or	r20, r22
+ 930:	24 2b       	or	r18, r20
+ 932:	28 2b       	or	r18, r24
+ 934:	20 64       	ori	r18, 0x40	; 64
+ 936:	2c bd       	out	0x2c, r18	; 44
+ 938:	08 95       	ret
+
+0000093a <spiWrite>:
+ 93a:	8e bd       	out	0x2e, r24	; 46
+ 93c:	08 95       	ret
+
+0000093e <spiRead>:
+
+uint8_t spiRead(void)
+{
+	while (!(SPSR & (1<<SPIF)));	//ESPERA POR QUE EL RECIBIMIENTO DE DATOS ESTE COMPLETO
+ 93e:	0d b4       	in	r0, 0x2d	; 45
+ 940:	07 fe       	sbrs	r0, 7
+ 942:	fd cf       	rjmp	.-6      	; 0x93e <spiRead>
+	return(SPDR);					//LEE LA INFORMACIÓN RECIBIDA POR EL BUFFER
+ 944:	8e b5       	in	r24, 0x2e	; 46
+ 946:	08 95       	ret
+
+00000948 <initUART9600>:
+#include "UART.h"
+
+void initUART9600(void){
+	
+	//Paso 1: RX como entrada y TX como salida
+	DDRD &= ~(1<<DDD0); //RX Como Entrada
+ 948:	8a b1       	in	r24, 0x0a	; 10
+ 94a:	8e 7f       	andi	r24, 0xFE	; 254
+ 94c:	8a b9       	out	0x0a, r24	; 10
+	DDRD |= (1<<DDD1);	//TX Como Salida
+ 94e:	8a b1       	in	r24, 0x0a	; 10
+ 950:	82 60       	ori	r24, 0x02	; 2
+ 952:	8a b9       	out	0x0a, r24	; 10
+	
+	//Paso 2: Configurar UCSR0A
+	
+	UCSR0A = 0;						//Resetear Registro
+ 954:	10 92 c0 00 	sts	0x00C0, r1	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+	
+	//Paso 3: Configurar UCSR0B Habilitando ISR de recepción, rx y tx
+	
+	UCSR0B = 0;											//Resetear Registro
+ 958:	e1 ec       	ldi	r30, 0xC1	; 193
+ 95a:	f0 e0       	ldi	r31, 0x00	; 0
+ 95c:	10 82       	st	Z, r1
+	UCSR0B |= (1<<RXCIE0) | (1<<RXEN0) | (1<<TXEN0);	//Habilitar Interrupciones de RX, Recepción, Transmisión
+ 95e:	80 81       	ld	r24, Z
+ 960:	88 69       	ori	r24, 0x98	; 152
+ 962:	80 83       	st	Z, r24
+	
+	//Paso 4: Configurar UCSR0C, Asincrono, Pariedad: None, 1 bit de Stop, Data bits: 8
+	
+	UCSR0C = 0;											//Resetear Registro
+ 964:	e2 ec       	ldi	r30, 0xC2	; 194
+ 966:	f0 e0       	ldi	r31, 0x00	; 0
+ 968:	10 82       	st	Z, r1
+	UCSR0C |= (1<<UCSZ01) | (1<<UCSZ00);				//Colocar 8 bits de datos
+ 96a:	80 81       	ld	r24, Z
+ 96c:	86 60       	ori	r24, 0x06	; 6
+ 96e:	80 83       	st	Z, r24
+	
+	//Paso 5: Configurar velocidad de Baudrate: 9600
+	
+	UBRR0 = 103;
+ 970:	87 e6       	ldi	r24, 0x67	; 103
+ 972:	90 e0       	ldi	r25, 0x00	; 0
+ 974:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+ 978:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+ 97c:	08 95       	ret
+
+0000097e <writeUART>:
+}
+
+void writeUART(char Caracter){
+	while(!(UCSR0A & (1<<UDRE0)));
+ 97e:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 982:	95 ff       	sbrs	r25, 5
+ 984:	fc cf       	rjmp	.-8      	; 0x97e <writeUART>
+	
+	UDR0 = Caracter;
+ 986:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 98a:	08 95       	ret
+
+0000098c <__tablejump2__>:
+ 98c:	ee 0f       	add	r30, r30
+ 98e:	ff 1f       	adc	r31, r31
+ 990:	05 90       	lpm	r0, Z+
+ 992:	f4 91       	lpm	r31, Z
+ 994:	e0 2d       	mov	r30, r0
+ 996:	09 94       	ijmp
+
+00000998 <__umulhisi3>:
+ 998:	a2 9f       	mul	r26, r18
+ 99a:	b0 01       	movw	r22, r0
+ 99c:	b3 9f       	mul	r27, r19
+ 99e:	c0 01       	movw	r24, r0
+ 9a0:	a3 9f       	mul	r26, r19
+ 9a2:	70 0d       	add	r23, r0
+ 9a4:	81 1d       	adc	r24, r1
+ 9a6:	11 24       	eor	r1, r1
+ 9a8:	91 1d       	adc	r25, r1
+ 9aa:	b2 9f       	mul	r27, r18
+ 9ac:	70 0d       	add	r23, r0
+ 9ae:	81 1d       	adc	r24, r1
+ 9b0:	11 24       	eor	r1, r1
+ 9b2:	91 1d       	adc	r25, r1
+ 9b4:	08 95       	ret
+
+000009b6 <_exit>:
+ 9b6:	f8 94       	cli
+
+000009b8 <__stop_program>:
+ 9b8:	ff cf       	rjmp	.-2      	; 0x9b8 <__stop_program>
